@@ -1,4 +1,4 @@
-#第一次内训：环境配置与 python 基础
+# 第一次内训：环境配置与 python 基础
 
 !!! tip "tips"
 	该文档主要讲解 git 版本控制，使用 Conda 进行环境管理以及 python 基础。
@@ -118,7 +118,7 @@ ssh-keygen -t rsa -C "your_email@example.com" #兼容性更强
   git remote -v							# 查看
   ```
 
-  !!! tip "tips"
+!!! tip "tips"
   	远程仓库名`origin`可以更换为你喜欢的名字。
 
 - pull 和 push
@@ -130,7 +130,60 @@ ssh-keygen -t rsa -C "your_email@example.com" #兼容性更强
 
 ## Conda 环境管理
 
+Conda是一个开源的包管理系统和环境管理系统，核心功能是包管理与环境管理。通过Conda,用户
+可以轻松安装和管理多个版本的Python以及相关的软件包。
 
+Miniconda 则是 Conda 的轻量化版本——它只包含最基本的 python 解释器与 Conda 包管理器，以及一些必须的依赖项，后续内容均基于 Miniconda 展开。
+
+### 安装 Miniconda
+
+=== "Windows Command Prompt"
+    ```bash
+    curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe -o .\miniconda.exe
+    start /wait "" .\miniconda.exe /S
+    del .\miniconda.exe
+    ```
+=== "Windows PowerShell"
+    ```bash
+    wget "https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe" -outfile ".\miniconda.exe"
+    Start-Process -FilePath ".\miniconda.exe" -ArgumentList "/S" -Wait
+    del .\miniconda.exe
+    ```
+=== "MacOS" 
+    - arm64
+    ```bash
+    mkdir -p ~/miniconda3
+    curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
+    bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+    rm ~/miniconda3/miniconda.sh
+    ```
+    - x86
+      ```bash
+      mkdir -p ~/miniconda3
+      curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
+      bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+      rm ~/miniconda3/miniconda.sh
+      ```
+    然后刷新并初始化conda
+    ```bash
+    source ~/miniconda3/bin/activate
+    conda init --all
+    ```
+
+### 
+
+
+
+
+
+
+
+
+
+
+
+
+  ​
 
 
 
