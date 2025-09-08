@@ -170,7 +170,21 @@ Miniconda 则是 Conda 的轻量化版本——它只包含最基本的 python �
     conda init --all
     ```
 
-### 
+### 安装 Jupyter Notebook
+
+Jupyter Notebook 是最新的基于 Web 的交互式开发环境，适用于笔记本、代码和数据。其灵活的界面允许用户配置和安排数据科学、科学计算、计算新闻学和机器学习领域的工作流程。模块化设计支持扩展，从而扩展和丰富功能。
+
+你可以在 Anaconda Prompt 中运行以下命令来安装 Jupyter Notebook。
+
+```bash
+conda install jupyter notebook -y
+```
+
+运行 Jupyter Notebook：
+
+```bash
+jupyter notebook
+```
 
 
 
@@ -183,7 +197,11 @@ Miniconda 则是 Conda 的轻量化版本——它只包含最基本的 python �
 
 
 
-  ​
+## 参考资料
+
+- [廖雪峰的官方网站](https://liaoxuefeng.com)
+- [ANACONDA Getting Started](https://www.anaconda.com/docs/getting-started/getting-started)
+- [Jupyter Notebook](https://jupyter.org)
 
 
 
