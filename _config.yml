@@ -1,7 +1,0 @@
-title: "Xanadu"
-description: "My blog on GitHub Pages"
-# 项目站点请设置为仓库名（含前导斜杠）；用户主页仓库请改为 ""（空字符串）
-baseurl: ""
-url: "https://xblanker.github.io"
-markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
