@@ -9,6 +9,8 @@ nav:
   - EAI: 
       - ./EAI/index.md
       - 环境配置与 python 基础: ./EAI/firstClass/index.md
+  - Blog: 
+      - ./blog/index.md
 
 theme:
   name: material

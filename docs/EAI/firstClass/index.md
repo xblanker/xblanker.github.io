@@ -150,29 +150,62 @@ Miniconda 则是 Conda 的轻量化版本——它只包含最基本的 python �
     del .\miniconda.exe
     ```
 === "MacOS" 
-    - arm64
-    ```bash
-    mkdir -p ~/miniconda3
-    curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
-    bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-    rm ~/miniconda3/miniconda.sh
-    ```
-    - x86
-      ```bash
-      mkdir -p ~/miniconda3
-      curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
-      bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-      rm ~/miniconda3/miniconda.sh
-      ```
+    === "arm64"
+        ```bash
+        mkdir -p ~/miniconda3
+        curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
+        bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+        rm ~/miniconda3/miniconda.sh
+        ```
+    === "x86"
+        ```bash
+        mkdir -p ~/miniconda3
+        curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda3/miniconda.sh
+        bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+        rm ~/miniconda3/miniconda.sh
+        ```
     然后刷新并初始化conda
     ```bash
     source ~/miniconda3/bin/activate
     conda init --all
     ```
 
-### 安装 Jupyter Notebook
+!!! tip "tips"
+    如果下载缓慢，可尝试[国内镜像](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/)，或者[浙江大学开源镜像站](https://mirrors.zju.edu.cn/anaconda/miniconda/)
+
+### Conda 基础命令
+
+- 创建并激活环境：
+
+```bash
+# 你可以指定其他的 python 版本，但我们推荐使用3.9
+conda create --name <envname> python=3.9 -y
+
+# 激活环境
+conda activate <envname>
+
+# 退出当前环境
+conda deactivate
+```
+
+- 安装 python 包
+
+```bash
+conda install <package>==<version>
+
+# 也可以使用 pip
+pip install <package>==<version>
+```
+
+??? success "conda install 与 pip install 有什么区别？"
+    详见[What is the difference between pip and Conda?](https://stackoverflow.com/questions/20994716/what-is-the-difference-between-pip-and-conda)
+    
+
+### Jupyter Notebook
 
 Jupyter Notebook 是最新的基于 Web 的交互式开发环境，适用于笔记本、代码和数据。其灵活的界面允许用户配置和安排数据科学、科学计算、计算新闻学和机器学习领域的工作流程。模块化设计支持扩展，从而扩展和丰富功能。
+
+#### 安装 Jupyter Notebook
 
 你可以在 Anaconda Prompt 中运行以下命令来安装 Jupyter Notebook。
 
@@ -186,11 +219,40 @@ conda install jupyter notebook -y
 jupyter notebook
 ```
 
+成功运行后会自动跳转到如下图所示的 web 界面：
 
+![Jupyter Notebook](image/jupyter_notebook.png)
 
+!!! tip "tips"
+    如果自动跳转失败，则可以在浏览器输入`localhost:8888`实现手动跳转
 
+#### 使用 Jupyter Notebook
 
+在 web 界面点击右上角 New → 选择 Python 3，会生成一个扩展名为 .ipynb 的笔记本文件。
 
+接下来你便可以尝试在 code 单元格输入 Python 代码，点击工具栏的 Run 按钮便可以运行当前单元格。
+
+使用快捷键 `shift + Enter` 便可以运行当前单元格并跳转到下一个单元格。
+
+### 在 IDE/编辑器 中使用
+
+=== "VS Code"
+    - conda 虚拟环境：
+
+      Search -> Show and Run Commands('>') -> Python: Select interpreter -> 选择现有的 conda 环境
+
+    - Jupyter Notebook：
+
+      新建文件时将文件后缀名改为`.ipynb`即可
+
+=== "PyCharm"
+    - conda 虚拟环境：
+
+      右下角 python -> Add New Interpreter -> 选择 conda 环境，Select conda path(eg:windows /path/to/_conda.exe)
+
+    - Jupyter Notebook：
+
+      新建文件 -> 选择 Jupyter Notebook
 
 
 
@@ -200,6 +262,7 @@ jupyter notebook
 ## 参考资料
 
 - [廖雪峰的官方网站](https://liaoxuefeng.com)
+- [ATLASSIAN GIT](https://www.atlassian.com/zh/git)
 - [ANACONDA Getting Started](https://www.anaconda.com/docs/getting-started/getting-started)
 - [Jupyter Notebook](https://jupyter.org)
 
