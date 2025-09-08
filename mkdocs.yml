@@ -1,0 +1,52 @@
+site_name: xblanker`s Blog
+site_url: https://xblanker.github.io
+repo_url: https://github.com/xblanker/xblanker.github.io
+
+nav:
+  - 首页: index.md
+  - classNotes: ./classNotes/index.md
+  - notes: ./notes/index.md
+  - EAI: 
+      - ./EAI/index.md
+      - 环境配置与 python 基础: ./EAI/firstClass/index.md
+      - Sample Code: ./EAI/Lab1-MiniCluster/index.md
+
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: black
+    accent: indigo
+  font:
+    text: Roboto
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+    - navigation.expand
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - header.autohide
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - blog
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/xblanker
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/xanadu233
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:x2996209468@163.com
