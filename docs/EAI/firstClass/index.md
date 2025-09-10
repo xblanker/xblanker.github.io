@@ -27,7 +27,7 @@ GIT 是什么？
 
 ```bash
 git init 		# 使当前文件夹成为 git 仓库，并创建 .git 隐藏文件夹
-git inti <folder>		# 创建文件夹并使其成为 git 仓库
+git init <folder>		# 创建文件夹并使其成为 git 仓库
 ```
 
 !!! warning "warning"
@@ -171,14 +171,14 @@ Miniconda 则是 Conda 的轻量化版本——它只包含最基本的 python �
     ```
 
 !!! tip "tips"
-    如果下载缓慢，可尝试[国内镜像](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/)，或者[浙江大学开源镜像站](https://mirrors.zju.edu.cn/anaconda/miniconda/)
+    如果下载缓慢，可尝试国内镜像，比如[清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/)，或者[浙江大学开源镜像站](https://mirrors.zju.edu.cn/anaconda/miniconda/)
 
 ### Conda 基础命令
 
 - 创建并激活环境：
 
 ```bash
-# 你可以指定其他的 python 版本，但我们推荐使用3.9
+# 你可以指定其他的 python 版本
 conda create --name <envname> python=3.9 -y
 
 # 激活环境
@@ -203,7 +203,7 @@ pip install <package>==<version>
 
 ### Jupyter Notebook
 
-Jupyter Notebook 是最新的基于 Web 的交互式开发环境，适用于笔记本、代码和数据。其灵活的界面允许用户配置和安排数据科学、科学计算、计算新闻学和机器学习领域的工作流程。模块化设计支持扩展，从而扩展和丰富功能。
+Jupyter Notebook 是最新的基于 Web 的交互式开发环境，适用于笔记本、代码和数据。
 
 #### 安装 Jupyter Notebook
 
@@ -236,6 +236,8 @@ jupyter notebook
 
 ### 在 IDE/编辑器 中使用
 
+以 Windows 系统为例
+
 === "VS Code"
     - conda 虚拟环境：
 
@@ -248,16 +250,104 @@ jupyter notebook
 === "PyCharm"
     - conda 虚拟环境：
 
-      右下角 python -> Add New Interpreter -> 选择 conda 环境，Select conda path(eg:windows /path/to/_conda.exe)
+      右下角 python -> Add New Interpreter -> 找到 conda 根目录 -> envs -> <envname> -> python.exe
 
     - Jupyter Notebook：
 
       新建文件 -> 选择 Jupyter Notebook
 
+## Python 基础
 
+!!! tip "tips"
+    我们非常推荐大家阅读[廖雪峰的 Python 教程](https://liaoxuefeng.com/books/python/introduction/index.html)
 
+### Python 中的数据类型
 
+- 整数：十进制，十六进制(0x前缀)等等，Python 还允许用`_`将数字分隔开来，比如`1000000`可以写作`1_000_000`，十六进制也是如此。
 
+- 浮点数：即小数，可以使用科学计数法来表述，eg:`3.14e-10`表示 $3.14 \times 10^{-10}$。
+
+- 字符串：单引号`'`或者双引号`"`内的内容，可以使用转义字符`\`来标识字符串内部可能出现的`'`以及`"`。
+
+- Bool值：只有`True` or `False`。可以通过`and`，`or`以及`not`来进行运算。
+
+- 空值：`None`.
+
+- list：list是一种有序的集合，可以随时添加和删除其中的元素。list 中的元素的数据类型也可以不同，甚至可以是另一个 list。
+
+- tuple：和 list 非常类似，但是必须初始化且初始化之后就不能更改。
+
+- dict：使用键-值（key-value）存储，具有极快的查找速度。
+
+- set：set和dict类似，也是一组key的集合，但不存储value，并且key不能重复。
+
+??? success "Python 中的类型注解"
+    Python 是一种 **动态语言** ，变量本身类型并不固定，即变量`a`在上一行可能是整数类型，到了下一行就有可能变成了字符串或是浮点数。不但容易发生类型错误，还不利用代码的理解。
+    
+    因此 Python 引入了类型注解这一概念，如下所示：
+    ```Python
+    name: str = 'Alice'
+    ```
+    不过需要注意的是，类型注解并不等于类型声明，只是为了能让人 or IDE 更好懂你的代码，Python 解释器是不会强制检查你的类型，比如：
+    ```Python
+    name: str = 10086
+    print(name)
+    ```
+    是可以正常运行的，如果你想要避免这样的问题，可以打开类型检查器。
+    
+    更多内容可以查看这个视频[为什么越来越多Python项目都在写类型注解？](https://www.bilibili.com/video/BV1sW81zbEkD/?share_source=copy_web&vd_source=397c57b1ef8dc41f7432f7c6eafc3cde)
+
+### 条件语句以及模式匹配
+
+- if - else
+
+```Python
+if <条件判断1>:
+    <执行1>
+elif <条件判断2>:
+    <执行2>
+elif <条件判断3>:
+    <执行3>
+else:
+    <执行4>
+```
+
+- match()
+
+```Python
+match 变量:
+    case 模式1:
+        # 当变量匹配模式1时执行
+    case 模式2:
+        # 当变量匹配模式2时执行
+    case _:
+        # 当所有模式都不匹配时执行（相当于默认分支）
+```
+
+### 循环
+
+- for 循环
+
+```Python
+for x in ...
+    <对每个 x 执行>
+```
+
+- while 循环
+
+```Python
+while <条件>
+    <执行>
+```
+
+### 函数
+
+可通过如下形式定义函数
+
+```Python
+def <函数命>(<变量>)
+    <函数内容>
+```
 
 ## 参考资料
 
@@ -265,6 +355,7 @@ jupyter notebook
 - [ATLASSIAN GIT](https://www.atlassian.com/zh/git)
 - [ANACONDA Getting Started](https://www.anaconda.com/docs/getting-started/getting-started)
 - [Jupyter Notebook](https://jupyter.org)
+- [菜鸟教程](https://www.runoob.com/python3/python3-tutorial.html)
 
 
 
