@@ -1,3 +1,10 @@
 # xblanker.github.io
 
-here will be my blog
+
+```bash
+git clone git@github.com:xblanker/xblanker.github.io.git
+
+mkdocs serve
+
+mkdocs build
+```
