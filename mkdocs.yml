@@ -5,12 +5,19 @@ repo_url: https://github.com/xblanker/xblanker.github.io
 nav:
   - 首页: index.md
   - classNotes: ./classNotes/index.md
-  - notes: ./notes/index.md
+  - notes: 
+    - ./notes/index.md
+    - DeepLearning: 
+      - ./notes/DeepLearning/index.md
+      - 线性神经网络:
+        - "线性神经网络": ./notes/DeepLearning/Linear/index.md
+        - "线性回归": ./notes/DeepLearning/Linear/LinearRegression/index.md
+        - "softmax回归": ./notes/DeepLearning/Linear/SoftmaxRegression/index.md
   - EAI: 
-      - ./EAI/index.md
-      - 环境配置与 python 基础: ./EAI/firstClass/index.md
-  - Blog: 
-      - ./blog/index.md
+    - ./EAI/index.md
+    - 环境配置与 python 基础: ./EAI/firstClass/index.md
+    - Numpy 基础: ./EAI/secondClass/index.md
+  - Blog: ./blog/index.md
 
 theme:
   name: material
@@ -38,13 +45,20 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
 
 plugins:
   - search
   - blog
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css: []
 
 extra:
   social:
