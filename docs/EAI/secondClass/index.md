@@ -68,6 +68,8 @@ np.empty(shape=shape, dtype=dtype, order='F')           # 列优先
 
 ## 索引和切片
 
+### 基础索引
+
 Numpy 数组可以基于下标进行索引，切片对象可以通过内置的 slice 函数，并设置 start, stop 及 step 参数进行，从原数组中切割出一个新数组。
 
 ```python
@@ -88,6 +90,9 @@ print(SampleNdarray[:, 0::2])
 # 输出 [[1 3],
 #       [4 6]]
 ```
+
+!!! tip "深拷贝与浅拷贝"
+    
 
 ### 高级索引
 

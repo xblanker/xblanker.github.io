@@ -17,6 +17,7 @@ nav:
     - ./EAI/index.md
     - 环境配置与 python 基础: ./EAI/firstClass/index.md
     - Numpy 基础: ./EAI/secondClass/index.md
+    - 神经网络基础: ./EAI/thirdClass/index.md
   - Blog: ./blog/index.md
 
 theme:
