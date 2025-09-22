@@ -71,3 +71,6 @@ extra:
       link: https://hub.docker.com/u/xanadu233
     - icon: fontawesome/solid/paper-plane
       link: mailto:x2996209468@163.com
+
+exclude:
+  - "*.pdf"
