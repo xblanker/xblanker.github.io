@@ -22,11 +22,26 @@
 
 ![](image/storage.png)
 
+## 程序的结构和运行
 
+### 数据
 
+![datasize](image/datasize.png)
 
+#### 寻址和字节顺序
 
+假设一个变量`x`，地址在`0x100`：
 
+```c
+int x = 0x012345678
+```
+
+- **大端序**：最高有效字节在最前面。
+- **小端法**：最低有效字节在最前面。
+
+![endian](image/endian.png)
+
+P66
 
 
 

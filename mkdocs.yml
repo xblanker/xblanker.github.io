@@ -6,15 +6,17 @@ nav:
   - 首页: index.md
   - classNotes: ./classNotes/index.md
   - notes: 
-    - ./notes/index.md
     - DeepLearning: 
-      - ./notes/DeepLearning/index.md
       - 线性神经网络:
         - "线性神经网络": ./notes/DeepLearning/Linear/index.md
         - "线性回归": ./notes/DeepLearning/Linear/LinearRegression/index.md
         - "softmax回归": ./notes/DeepLearning/Linear/SoftmaxRegression/index.md
+      - 循环神经网络: 
+        - Fundamental: ./notes/DeepLearning/Recurrent/fundamental/index.md
+        - 循环神经网络: ./notes/DeepLearning/Recurrent/Recurrent/index.md
+        - 现代循环神经网络: ./notes/DeepLearning/Recurrent/Modern/index.md
+    - OS: ./notes/OS/index.md
   - EAI: 
-    - ./EAI/index.md
     - 环境配置与 python 基础: ./EAI/firstClass/index.md
     - Numpy 基础: ./EAI/secondClass/index.md
     - 神经网络基础: ./EAI/thirdClass/index.md
@@ -34,7 +36,6 @@ theme:
     - navigation.top
     - navigation.instant
     - navigation.expand
-    - navigation.indexes
     - navigation.footer
     - toc.follow
     - content.code.annotate
@@ -43,6 +44,7 @@ theme:
     - header.autohide
 
 markdown_extensions:
+  - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.superfences

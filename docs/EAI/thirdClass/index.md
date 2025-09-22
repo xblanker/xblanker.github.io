@@ -32,13 +32,64 @@ $$L(\mathbf{w}, b) = \frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) = \frac{1}{n
 
 ### 梯度下降
 
+梯度下降(gradient descent)是通过不断地在损失函数递减的方向上更新参数来降低误差。
 
+![Gradient descent](image/gardient_descent.png){width=80%}
+
+??? success "举个例子"
+    对于一个线性回归模型，假设包含 $\mathbf{d}$ 个特征，那么预测结果 $\hat{\mathbf{y}}$ 可以表示为
+
+    $$\hat{y} = w_1  x_1 + ... + w_d  x_d + b$$
+
+    使用线性代数的方法表示就是
+
+    $$\hat{y} = \mathbf{w}^\top \mathbf{x} + b$$
+
+    其中 $\mathbf{x} \in \mathbb{R}^d$ ，$\mathbf{w} \in \mathbb{R}^d$ 。
+
+    假设数据集中包含 $\mathbf{n}$ 个样本，
+
+    $${\hat{\mathbf{y}}} = \mathbf{X} \mathbf{w} + b$$
+
+    其中特征集合 $\mathbf{X} \in \mathbb{R}^{n \times d}$ ，预测值 $\hat{\mathbf{y}} \in \mathbb{R}^n$ 。
+
+    计算损失函数
+
+    $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l_{i}(\mathbf{w}, b) =\frac{1}{n} \sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}_{i} + b - y_{i}\right)^2$$
+
+    可以发现，损失函数 $L(\mathbf{w}, b)$ 是一个关于系数 $\mathbf{w}$ 和偏置 $b$ 的函数。
+
+    我们可以通过计算损失函数（数据集中所有样本的损失均值） 关于模型参数的导数（梯度）来实现梯度下降。但实际的执行可能会非常慢：因为在每一次更新参数之前，我们必须遍历整个数据集。
+
+    因此，我们通常会在每次需要计算更新的时候随机抽取一小批样本， 这种变体叫做小批量随机梯度下降（minibatch stochastic gradient descent）。
+
+    更新过程可以用如下数学公式表示：
+
+    $$(\mathbf{w},b) \leftarrow (\mathbf{w},b) - \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \partial_{(\mathbf{w},b)} l_{i}(\mathbf{w},b).$$
 
 ### softmax 回归
 
+softmax 是一种常用的激活函数，主要用于多分类问题，其核心作用是将一组任意范围的实数转换为符合概率分布的数值，以便直观地表示 “属于某个类别的可能性”。
+
+以一个简单的三分类为例，如下图所示
+
+![softmax](image/softmax.svg)
+
+$$\begin{split}\begin{aligned}
+o_1 &= x_1 w_{11} + x_2 w_{12} + x_3 w_{13} + x_4 w_{14} + b_1,\\
+o_2 &= x_1 w_{21} + x_2 w_{22} + x_3 w_{23} + x_4 w_{24} + b_2,\\
+o_3 &= x_1 w_{31} + x_2 w_{32} + x_3 w_{33} + x_4 w_{34} + b_3.
+\end{aligned}\end{split}$$
+
+softmax 的计算公式为：
+
+$$\hat{y}_j = \frac{\exp(o_j)}{\sum_k \exp(o_k)}$$
 
 
-### 线性层
+
+
+
+### 多层感知机
 
 ## 参考资料
 
