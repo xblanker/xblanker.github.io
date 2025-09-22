@@ -1,2 +1,5 @@
 /d2l-zh/*
 /docs/notes/orangepi/*
+
+# Ignore all PDF files
+*.pdf
